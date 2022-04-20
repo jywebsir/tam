@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "tam-icon"; /* Project id 3343689 */
+	src: url('//at.alicdn.com/t/font_3343689_hc1jv5s3sdl.woff2?t=1650425103498') format('woff2'),
+			 url('//at.alicdn.com/t/font_3343689_hc1jv5s3sdl.woff?t=1650425103498') format('woff'),
+			 url('//at.alicdn.com/t/font_3343689_hc1jv5s3sdl.ttf?t=1650425103498') format('truetype');
+}
+
+.tam-icon {
+  font-family: "tam-icon" !important;
+  font-size: var(--tam-icon-default-size, 28px);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tam-icon-close-circle-fill:before {
+  content: "\e845";
+}
+
+.tam-icon-check-circle-fill:before {
+  content: "\e844";
+}
+
+.tam-icon-right:before {
+  content: "\e7eb";
+}
+
+.tam-icon-left:before {
+  content: "\e7ec";
+}
+
+.tam-icon-up:before {
+  content: "\e7ed";
+}
+
+.tam-icon-down:before {
+  content: "\e7ee";
+}

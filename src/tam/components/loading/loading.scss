@@ -1,0 +1,88 @@
+$class-prefix: 'tam-loading';
+$var-prefix: '--tam-loading';
+
+.#{$class-prefix} {
+	--color: var(#{$var-prefix}-color, var(--tam-color-weak)); 
+	--width: var(#{$var-prefix}-width, 50px); 
+	--height: var(#{$var-prefix}-height, 50px); 
+	--text-color: var(#{$var-prefix}-text-color, var(--tam-color-weak)); 
+	display: inline-flex;
+  align-items: center;
+  justify-content: center;
+	color: var(--color);
+
+
+	&-wrapper {
+		position: relative;
+    box-sizing: border-box;
+		width: var(--width);
+		height: var(--height);
+		max-width: 100%;
+    max-height: 100%;
+		animation: tam-rotate 0.8s linear infinite;
+
+		&.#{$class-prefix}-spinner {
+			animation-timing-function: steps(12);
+		}
+
+		&.#{$class-prefix}-circular {
+			border: 1px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 100%;
+		}	
+
+		.#{$class-prefix}-dot {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+	
+			&::before {
+				display: block;
+				width: 4px;
+				height: 25%;
+				margin: 0 auto;
+				background-color: currentColor;
+				border-radius: 40%;
+				content: ' ';
+			}
+		}
+	}
+}
+
+.#{$class-prefix}-text {
+	margin-left: 16px;
+	color: var(--text-color);
+	font-size: 28px;
+	line-height: 40px;
+
+	&:empty {
+		display: none;
+	}
+}
+
+&.#{$class-prefix}-vertical {
+	flex-direction: column;
+
+	.#{$class-prefix}-text {
+		margin: 16px 0 0;
+	}
+}
+
+@for $i from 1 through 12 {
+	.#{$class-prefix}-dot:nth-of-type(#{$i}) {
+		transform: rotate($i * 30deg);
+    opacity: 1 - (0.75 / 12) * ($i - 1);
+  }
+}
+
+@keyframes tam-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

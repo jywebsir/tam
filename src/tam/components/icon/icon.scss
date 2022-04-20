@@ -1,0 +1,10 @@
+$class-prefix: 'tam-icon';
+$var-prefix: '--tam-icon';
+
+.#{$class-prefix} {
+	--color: var(#{$var-prefix}-color, var(--tam-color-icon));
+	--font-size: var(#{$var-prefix}-font-size, var(--tam-icon-default-size));
+
+	font-size: var(--font-size);
+	color: var(--color);
+}
